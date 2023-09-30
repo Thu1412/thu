@@ -1,21 +1,29 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <title>@ViewBag.Title</title>
+    <style type="text/css">
+        .imgbook {
+            transition: all 1s ease-in;
+            width: 400px;
+        }
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+            .imgbook:hover {
+                transform: scale(0.9);
+                cursor: pointer;
+            }
 
-
-
+        .imgsachbannhieu {
+            width: 100px;
+        }
+    </style>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <nav class="navbar navbar-inverse">
@@ -94,186 +102,17 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <!--CHỦ ĐỀ và NHÀ XUẤT BẢN-->
-                    <ul class="list-group">
-                        <li class="list-group-item active" style="font-weight:bold; text-align:center">SÁCH THEO CHỦ ĐỀ</li>
-                        <a href="#" class="list-group-item">Ngoại ngữ</a>
-                        <a href="#" class="list-group-item">Công nghệ thông tin</a>
-                        <a href="#" class="list-group-item">Luật</a>
-                        <a href="#" class="list-group-item">Văn học</a>
-                        <a href="#" class="list-group-item">Khoa học kỹ thuật</a>
-                        <a href="#" class="list-group-item">Nông nghiệp</a>
-                        <a href="#" class="list-group-item">Lịch sử, địa lý</a>
-                        <a href="#" class="list-group-item">Kinh tế</a>
-                        <a href="#" class="list-group-item">Nghệ thuật sống</a>
-                        <br>
-                        <br>
-                        <li class="list-group-item active" style="font-weight:bold; text-align:center">SÁCH THEO NHÀ XUẤT BẢN</li>
-                        <a href="#" class="list-group-item">Nhà xuất bản trẻ</a>
-                        <a href="#" class="list-group-item">NXB Thống kê</a>
-                        <a href="#" class="list-group-item">Kim Đồng</a>
-                        <a href="#" class="list-group-item">Đại học quốc gia</a>
-                        <a href="#" class="list-group-item">Văn Hóa nghệ thuật</a>
-                        <a href="#" class="list-group-item">Văn hóa</a>
-                        <a href="#" class="list-group-item">Lao động và Xã hội</a>
-                        <a href="#" class="list-group-item">Khoa học và kỹ thuật</a>
-                    </ul>
+                    
                     <br>
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                    <h2 class="text-center">SÁCH MỚI</h2>
-                    <hr>
-                    <div class="row text-center">
-                        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
-                            <div class="thumbnail">
-                                <img src="~/Images/Slider/KT0007.jpg" alt="Thumbnail Image 1" class="img-responsive img-rounded imgbook ">
-                                <div class="caption">
-                                    <h3>Sản phẩm 1</h3>
-                                    <p>Mô tả tóm tắt sản phẩm 1</p>
-                                    <p>
-                                        <a href="#" class="btn btn-primary" role="button">
-                                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to Cart
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
-                            <div class="thumbnail">
-                                <img src="~/Images/Slider/130499.jpg" alt="Thumbnail Image 1" class="img-responsive img-rounded imgbook ">
-                                <div class="caption">
-                                    <h3>Sản phẩm 1</h3>
-                                    <p>Mô tả tóm tắt sản phẩm 1</p>
-                                    <p>
-                                        <a href="#" class="btn btn-primary" role="button">
-                                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to Cart
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
-                            <div class="thumbnail">
-                                <img src="~/Images/Slider/130318.jpg" alt="Thumbnail Image 1" class="img-responsive img-rounded imgbook ">
-                                <div class="caption">
-                                    <h3>Sản phẩm 1</h3>
-                                    <p>Mô tả tóm tắt sản phẩm 1</p>
-                                    <p>
-                                        <a href="#" class="btn btn-primary" role="button">
-                                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to Cart
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
-                            <div class="thumbnail">
-                                <img src="~/Images/Slider/KT0001.jpg" alt="Thumbnail Image 1" class="img-responsive img-rounded imgbook ">
-                                <div class="caption">
-                                    <h3>Sản phẩm 1</h3>
-                                    <p>Mô tả tóm tắt sản phẩm 1</p>
-                                    <p>
-                                        <a href="#" class="btn btn-primary" role="button">
-                                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to Cart
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
-                            <div class="thumbnail">
-                                <img src="~/Images/Slider/KT0003.jpg" alt="Thumbnail Image 1" class="img-responsive img-rounded imgbook ">
-                                <div class="caption">
-                                    <h3>Sản phẩm 1</h3>
-                                    <p>Mô tả tóm tắt sản phẩm 1</p>
-                                    <p>
-                                        <a href="#" class="btn btn-primary" role="button">
-                                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to Cart
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
-                        </div>
-                        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
-                            <div class="thumbnail">
-                                <img src="~/Images/Slider/KT0002.jpg" alt="Thumbnail Image 1" class="img-responsive img-rounded imgbook ">
-                                <div class="caption">
-                                    <h3>Sản phẩm 1</h3>
-                                    <p>Mô tả tóm tắt sản phẩm 1</p>
-                                    <p>
-                                        <a href="#" class="btn btn-primary" role="button">
-                                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to Cart
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
-                        </div>
-                        <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6 hidden-xs">
-                        </div>
-                        <nav class="text-center">
-                            <ul class="pagination">
-                                <li> <a href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> </a> </li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li class="disabled"><a href="#">5</a></li>
-                                <li> <a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span> </a> </li>
-                            </ul>
-                        </nav>
-                    </div>
 
+                    @RenderBody()
                 </div>
                 <hr>
             </div>
             <div class="container">
                 <h2 class="text-center">SÁCH BÁN NHIỀU</h2>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="media-object-default">
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#">
-                                        <img class="media-object imgsachbannhieu"
-                                             src="~/Images/Slider/TH006.jpg" alt="placeholder image">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Tên sản phẩm 5</h4>
-                                    Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản
-                                    phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản
-                                    phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm.
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="media-object-default">
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#">
-                                        <img class="media-object imgsachbannhieu"
-                                             src="~/Images/Slider/TH005.jpg" alt="placeholder image">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Tên sản phẩm 5</h4>
-                                    Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản
-                                    phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản
-                                    phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm.
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-                <br>
-                <br>
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="media-object-default">
@@ -300,7 +139,50 @@
                                 <div class="media-left">
                                     <a href="#">
                                         <img class="media-object imgsachbannhieu"
-                                             src="~/Images/Slider/TH002.jpg" alt="placeholder image">
+                                             src="~/Images/Slider/TH004.jpg" alt="placeholder image">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Tên sản phẩm 5</h4>
+                                    Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản
+                                    phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản
+                                    phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="media-object-default">
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object imgsachbannhieu"
+                                             src="~/Images/Slider/TH005.jpg" alt="placeholder image">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Tên sản phẩm 5</h4>
+                                    Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản
+                                    phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản
+                                    phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="media-object-default">
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object imgsachbannhieu"
+                                             src="~/Images/Slider/TH006.jpg" alt="placeholder image">
                                     </a>
                                 </div>
                                 <div class="media-body">
@@ -325,7 +207,7 @@
                         <div class="media-left">
                             <a href="#">
                                 <img class="media-object imgsachbannhieu"
-                                     src="~/Images/Slider/TH004.jpg" alt="placeholder image">
+                                     src="~/Images/Slider/TH007.jpg" alt="placeholder image">
                             </a>
                         </div>
                         <div class="media-body">
@@ -345,7 +227,7 @@
                         <div class="media-left">
                             <a href="#">
                                 <img class="media-object imgsachbannhieu"
-                                     src="~/Images/Slider/TH001.jpg" alt="placeholder image">
+                                     src="~/Images/Slider/TH008.jpg" alt="placeholder image">
                             </a>
                         </div>
                         <div class="media-body">
@@ -372,11 +254,16 @@
     </div>
     </div>
     <div class="container body-content">
-        <hr>
-        @RenderBody()
+
         <hr />
         <footer class="container well">
         </footer>
     </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
 </body>
 </html>
