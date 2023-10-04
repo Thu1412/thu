@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -26,11 +27,25 @@ dbSachOnlineDataContext data = new dbSachOnlineDataContext();
             var listSachMoi = LaySachMoi(6);
             return View(listSachMoi);
         }
+        
+       
         public ActionResult ChuDePartial()
         {
             var listChuDe = from cd in data.CHUDEs select cd;
             return PartialView(listChuDe);
         }
-       
+
+        public ActionResult PartialView()
+        {
+            var listNhaXB = from cd in data.NHAXUATBANs select cd;
+            return PartialView(listNhaXB);
+        }
+
+
+        public ActionResult SachBanNhieuPartial()
+        {
+            var listSachBanNhieu = from cd in data.CHITIETDATHANGs select cd;
+            return View(listSachBanNhieu);
+        }
     }
 }

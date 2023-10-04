@@ -227,6 +227,9 @@
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
     <Content Include="Views\SachOnline\Index.cshtml" />
     <Content Include="Views\SachOnline\ChuDePartial.cshtml" />
+    <Content Include="Views\SachOnline\PartialView.cshtml" />
+    <Content Include="Views\SachOnline\SachBanNhieuPartial.cshtml" />
+    <Content Include="Views\Shared\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

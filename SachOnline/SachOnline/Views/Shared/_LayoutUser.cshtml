@@ -103,23 +103,20 @@
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <!--CHỦ ĐỀ và NHÀ XUẤT BẢN-->
                     <ul class="list-group">
-                        @Html.Action("ChuDePartial", "SachOnline")
+                       <a @Html.Action("ChuDePartial", "SachOnline") </a>
+                        
                         <br>
                         <br>
-                        <li class="list-group-item active" style="font-weight:bold; text-align:center">SÁCH THEO NHÀ XUẤT BẢN</li>
-                        <a href="#" class="list-group-item">Nhà xuất bản trẻ</a>
-                        <a href="#" class="list-group-item">NXB Thống kê</a>
-                        <a href="#" class="list-group-item">Kim Đồng</a>
-                        <a href="#" class="list-group-item">Đại học quốc gia</a>
-                        <a href="#" class="list-group-item">Văn Hóa nghệ thuật</a>
-                        <a href="#" class="list-group-item">Văn hóa</a>
-                        <a href="#" class="list-group-item">Lao động và Xã hội</a>
-                        <a href="#" class="list-group-item">Khoa học và kỹ thuật</a>
+                        <a @Html.Action("PartialView", "SachOnline") </a>
+                        
+                        
                     </ul>
                     <br>
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                    
                     @RenderBody()
+
                 </div>
                 <hr>
             </div>
@@ -267,6 +264,7 @@
     </div>
     <div class="container body-content">
 
+       
         <hr />
         <footer class="container well">
         </footer>

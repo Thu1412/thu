@@ -1,0 +1,12 @@
+﻿
+@model IEnumerable<SachOnline.Models.CHITIETDATHANG>
+
+<div class="container">
+    <h2 class="text-center">SÁCH BÁN NHIỀU</h2>
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("SachBanNhieuPartial","SachOnline", new { id = item.MaSach})"
+           class="list-group-item">@item.SoLuong</a>
+    }
+
+</div>
