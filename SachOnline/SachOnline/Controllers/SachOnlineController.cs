@@ -8,9 +8,9 @@ namespace SachOnline.Controllers
 {
     public class SachOnlineController : Controller
     {
-//Tao 1 doi tuong chua toan bo CSDL tu bdSachOnline
+        //Tao 1 doi tuong chua toan bo CSDL tu bdSachOnline
 
-dbSachOnlineDataContext data = new dbSachOnlineDataContext("Data Source=.;Initial Catalog=SachOnline;Integrated Security=True");
+        dbSachOnlineDataContext data = new dbSachOnlineDataContext("Data Source=XIUXIUTHW\\MAYAO;Initial Catalog=SachOnline;Integrated Security=True");
         /// <summary>
         /// LaySachMoi
         /// </summary>
@@ -27,12 +27,41 @@ dbSachOnlineDataContext data = new dbSachOnlineDataContext("Data Source=.;Initia
             var listSachMoi = LaySachMoi(6);
             return View(listSachMoi);
         }
-        
-       
+
+        public ActionResult SachTheoChuDe(int id)
+
+        {
+
+            var sach = from s in data.SACHes where s.MaCD == id select s;
+            return View(sach);
+
+           
+ 
+        }
+        public ActionResult SachTheoNhaXuatBan(int id)
+
+        {
+
+            var sach = from s in data.SACHes where s.MaNXB == id select s;
+            return View(sach);
+
+
+
+        }
+        public ActionResult ChiTietSach(int id)
+
+        {
+
+            var sach = from s in data.SACHes
+
+                       where s.MaSach == id select s;
+            return View(sach.Single());
+        }
         public ActionResult ChuDePartial()
         {
             var listChuDe = from cd in data.CHUDEs select cd;
-            return PartialView(listChuDe);
+           return PartialView(listChuDe);
+            
         }
 
         public ActionResult PartialView()

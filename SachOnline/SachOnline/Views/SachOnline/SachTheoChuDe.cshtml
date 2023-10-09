@@ -1,9 +1,10 @@
-﻿@model IEnumerable<SachOnline.Models.SACH>
-
+﻿
 @{
-    ViewBag.Title = "TRANG CHỦ";
+    ViewBag.Title = "SÁCH THEO CHỦ ĐỀ";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
+
 }
+
 <style type="text/css">
     .imgbook {
         transition: all 1s ease-in;
@@ -15,7 +16,7 @@
             cursor: pointer;
         }
 </style>
-<h2 class="text-center">SÁCH MỚI</h2>
+<h2 class="text-center">SÁCH THEO CHỦ ĐỀ</h2>
 <hr>
 <div class="row text-center">
     @foreach (var sach in Model)

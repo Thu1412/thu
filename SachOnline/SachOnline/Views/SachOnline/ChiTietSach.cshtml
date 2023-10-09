@@ -1,0 +1,40 @@
+﻿@{ ViewBag.Title = "CHI TIẾT SÁCH ";
+   Layout = "~/Views/Shared/_LayoutUser.cshtml"; }
+
+<style type="text/css">
+    .imgbook {
+        transition: all 1s ease-in;
+        width: 400px;
+    }
+
+        .imgbook:hover {
+            transform: scale(0.9);
+            cursor: pointer;
+        }
+</style>
+<h2 class="text-center">CHI TIẾT SÁCH</h2>
+<hr>
+<div class="thumbnail">
+    <div class="text-center">
+        <h4 class="tensach">
+            @Model.TenSach
+        </h4>
+    </div>
+        <img src="~/Images/Slider/@Model.AnhBia" alt="@Model.TenSach" />
+        <div class="motasach">
+            <p>
+                @Html.Raw(Model.MoTa.ToString().Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp"))
+            </p>
+        </div>
+        <div class="text-right">
+            <p class="ngaycapnhat">Ngày cập nhật: @Html.FormatValue(@Model.NgayCapNhat, "{0:dd/MM/yyyy}")</p>
+            <p class="giaban">Giá bán: <span>@Html.FormatValue(@Model.GiaBan, "{0:#,##0}") VNĐ</span></p>
+            <p class="addtocard>
+                <a href="@Url.Action("AddToCard","ShoppingCart") new {id = @Model.MaSach}"
+               <a href="#" class="btn btn-primary" role="button">
+                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to Cart
+                </a>
+            </a>
+            </p>
+        </div>
+    </div>
