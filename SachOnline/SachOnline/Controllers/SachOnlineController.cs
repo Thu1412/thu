@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 using SachOnline.Models;
 namespace SachOnline.Controllers
 {
@@ -28,17 +30,17 @@ namespace SachOnline.Controllers
             return View(listSachMoi);
         }
 
-        public ActionResult SachTheoChuDe(int id)
-
+        public ActionResult SachTheoChuDe(int iMaCD, int? page)
         {
+            ViewBag.MaCD = iMaCD;
+            int iSize = 3;
+            int iPageNum = (page ?? 1);
+            var sach = from s in db.SACHes where s.MaCD == iMaCD select s;
+            return View(sach.ToPagedList(iPageNum, iSize));
 
-            var sach = from s in db.SACHes where s.MaCD == id select s;
-            return View(sach);
 
-           
- 
         }
-        
+
         public ActionResult ChiTietSach(int id)
 
         {
@@ -61,12 +63,18 @@ namespace SachOnline.Controllers
             var listNhaXB = from xb in db.NHAXUATBANs select xb;
             return PartialView(listNhaXB);
         }
-        public ActionResult SachTheoNhaXuatBan(int id)
+        public ActionResult SachTheoNhaXuatBan(int iMaNXB, int ? page)
 
         {
 
-            var sach = from s in db.SACHes where s.MaNXB == id select s;
-            return View(sach);
+            ViewBag.MaNXB = iMaNXB;
+            int iSize = 3;
+            int iPageNum = (page ?? 1);
+            var sach = from s in db.SACHes where s.MaNXB == iMaNXB select s;
+            return View(sach.ToPagedList(iPageNum, iSize));
+
+
+            
 
         }
 
