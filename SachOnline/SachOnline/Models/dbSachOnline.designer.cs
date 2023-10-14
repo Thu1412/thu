@@ -54,7 +54,10 @@ namespace SachOnline.Models
     partial void InsertTACGIA(TACGIA instance);
     partial void UpdateTACGIA(TACGIA instance);
     partial void DeleteTACGIA(TACGIA instance);
-    partial void InsertVIETSACH(VIETSACH instance);
+
+       
+
+        partial void InsertVIETSACH(VIETSACH instance);
     partial void UpdateVIETSACH(VIETSACH instance);
     partial void DeleteVIETSACH(VIETSACH instance);
     #endregion
@@ -120,16 +123,17 @@ namespace SachOnline.Models
 				return this.GetTable<DONDATHANG>();
 			}
 		}
-		
-		public System.Data.Linq.Table<KHACHHANG> KHACHHANGs
+
+        public System.Data.Linq.Table<KHACHHANG> KHACHHANGs
 		{
-			get
-			{
+            get
+            {
 				return this.GetTable<KHACHHANG>();
 			}
-		}
-		
-		public System.Data.Linq.Table<NHAXUATBAN> NHAXUATBANs
+            
+        }
+
+        public System.Data.Linq.Table<NHAXUATBAN> NHAXUATBANs
 		{
 			get
 			{

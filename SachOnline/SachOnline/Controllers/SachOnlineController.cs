@@ -10,7 +10,7 @@ namespace SachOnline.Controllers
     {
         //Tao 1 doi tuong chua toan bo CSDL tu bdSachOnline
 
-        dbSachOnlineDataContext data = new dbSachOnlineDataContext("Data Source=XIUXIUTHW\\MAYAO;Initial Catalog=SachOnline;Integrated Security=True");
+        dbSachOnlineDataContext db = new dbSachOnlineDataContext("Data Source=XIUXIUTHW\\MAYAO;Initial Catalog=SachOnline;Integrated Security=True");
         /// <summary>
         /// LaySachMoi
         /// </summary>
@@ -18,7 +18,7 @@ namespace SachOnline.Controllers
         /// <returns>List</returns>
         private List <SACH> LaySachMoi(int count)
         {
-            return data.SACHes.OrderByDescending(a =>a.NgayCapNhat).Take(count).ToList();
+            return db.SACHes.OrderByDescending(a =>a.NgayCapNhat).Take(count).ToList();
         }
         // GET: SachOnline
         public ActionResult Index()
@@ -32,49 +32,59 @@ namespace SachOnline.Controllers
 
         {
 
-            var sach = from s in data.SACHes where s.MaCD == id select s;
+            var sach = from s in db.SACHes where s.MaCD == id select s;
             return View(sach);
 
            
  
         }
-        public ActionResult SachTheoNhaXuatBan(int id)
-
-        {
-
-            var sach = from s in data.SACHes where s.MaNXB == id select s;
-            return View(sach);
-
-
-
-        }
+        
         public ActionResult ChiTietSach(int id)
 
         {
 
-            var sach = from s in data.SACHes
+            var sach = from s in db.SACHes
 
                        where s.MaSach == id select s;
             return View(sach.Single());
         }
+
         public ActionResult ChuDePartial()
         {
-            var listChuDe = from cd in data.CHUDEs select cd;
+            var listChuDe = from cd in db.CHUDEs select cd;
            return PartialView(listChuDe);
             
         }
 
-        public ActionResult PartialView()
+        public ActionResult NhaXuatBanPartial()
         {
-            var listNhaXB = from cd in data.NHAXUATBANs select cd;
+            var listNhaXB = from xb in db.NHAXUATBANs select xb;
             return PartialView(listNhaXB);
         }
+        public ActionResult SachTheoNhaXuatBan(int id)
 
+        {
+
+            var sach = from s in db.SACHes where s.MaNXB == id select s;
+            return View(sach);
+
+        }
 
         public ActionResult SachBanNhieuPartial()
         {
-            var listSachBanNhieu = from cd in data.CHITIETDATHANGs select cd;
-            return View(listSachBanNhieu);
+            var listSachBanNhieu = from bn in db.SACHes select bn;
+             return PartialView(listSachBanNhieu);
+            
         }
+       
+        public  ActionResult NavPartial()
+        {
+            return PartialView();
+        }
+        public ActionResult SiderPartial()
+        {
+            return PartialView();
+        }
+
     }
 }

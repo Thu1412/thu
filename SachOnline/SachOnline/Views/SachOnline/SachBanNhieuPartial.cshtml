@@ -1,12 +1,174 @@
 ﻿
-@model IEnumerable<SachOnline.Models.CHITIETDATHANG>
+@{ ViewBag.Title = "SachBanNhieu"; }
+<style type="text/css">
+    .imgbook {
+        transition: all 1s ease-in;
+        width: 400px;
+    }
+
+        .imgbook:hover {
+            transform: scale(0.9);
+            cursor: pointer;
+        }
+</style>
 
 <div class="container">
     <h2 class="text-center">SÁCH BÁN NHIỀU</h2>
-    @foreach (var item in Model)
-    {
-        <a href="@Url.Action("SachBanNhieuPartial","SachOnline", new { id = item.MaSach})"
-           class="list-group-item">@item.SoLuong</a>
-    }
+    <hr>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <div class="media-object-default">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object imgsachbannhieu"
+                                 src="~/Images/Slider/TH006.jpg" alt="placeholder image">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Giáo trình Tin học cơ bản</h4>
+                        Cuốn sách này không đi vào chi tiết những chủ đề quản lý cổ điển đã được nhắc đến trong nhiều cuốn sách khác như tổ chức cuộc họp, cung cấp số liệu, quản lý thời gian. Mục đích của cuốn sách này là mang lại cho bạn "nhiều hơn", một giá trị gia tăng so với những gì bạn đã biết và đã áp dụng, và giúp bạn tối ưu hóa việc quản lý chuyên môn và quản lý nhân sự.
+                        Nội dung sách bao gồm 9 chương:
+                        Chương 1: Bốn cách nhìn quản lý theo sắc màu.
+                        Chương 2: Quản lý các sắc màu của một cộng tác viên.
+                        Chương 3: Quản lý nhóm theo màu sắc.
+                        Chương 4: Quyết định cách thích hợp dựa vào bản thân, người khác và hoàn cảnh.
+                        Chương 5: Phát triển hiệu quả tối ưu theo sắc màu.
+                        Chương 6: Hiểu rõ những sai lệch trong cách quản lý của mình.
+                        Chương 7: Nền tảng cơ sở của hệ thống Success Insights: Bốn màu với tám kiểu.
+                        Chương 8: Nhận biết và quản lý tám kiểu cộng tác viên.
+                        Chương 9: Cải thiện người quản lý.
+                        Xin trân trọng giới thiệu.
 
-</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <div class="media-object-default">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object imgsachbannhieu"
+                                 src="~/Images/Slider/TH005.jpg" alt="placeholder image">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Giáo trình Tin học văn phòng</h4>
+                        Nội dung của cuốn: Tin Học Cơ Bản Windows XP gồm có 7 chương:
+                        Chương 1: Một số vấn đề cơ bản.
+                        Chương 2: Sử dụng nhanh thanh công cụ và thanh thực đơn trong My Computer và Windows Explorer.
+                        Chương 3: Các thao tác trong windows XP.
+                        Chương 4: Các thiết lập trong Windows XP.
+                        Chương 5: Bảo trì máy tính.
+                        Chương 6: Các phím tắt
+                        Chương 7: Hỏi và đáp các thắc mắc.
+                        Xin trân trọng giới thiệu cuốn sách cùng bạn
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <div class="media-object-default">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object imgsachbannhieu"
+                                 src="~/Images/Slider/TH003.jpg" alt="placeholder image">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Lập Trình Cơ Sở Dữ Liệu Với Visual Basic 2005 Và ADO.NET 2.0</h4>
+                        Cuốn sách này gồm 3 phần sau:
+                        Phần 1: Xử lý văn bản trong Microsoft Office Word 2007.
+                        Phần 2: Xử lý bảng tính trong Microsoft Office Excel 2007.
+                        Phần 3: Quản lý cơ sở dữ liệu trong Microsoft Office Access 2007.
+                        Xin trân trọng giới thiệu cùng các bạn.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <div class="media-object-default">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object imgsachbannhieu"
+                                 src="~/Images/Slider/TH002.jpg" alt="placeholder image">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Visual Basic 2005 Tập 3, Quyển 2: Lập Trình Web</h4>
+                        Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản
+                        phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản
+                        phẩm. Mô tả chi tiết sản phẩm. Mô tả chi tiết sản phẩm.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <br>
+            <br>
+            <div class="col-lg-6 col-md-6">
+                <div class="media-object-default">
+                    <!-- Sản phẩm 4,5,6-->
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object imgsachbannhieu"
+                                     src="~/Images/Slider/TH004.jpg" alt="placeholder image">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Giáo trình Tin học quản lý 1</h4>
+                            "Visual Basic 2005 Tập 3, Quyển 2: Lập Trình Web Với Cơ Sở Dữ Liệu" sẽ cung cấp kỹ thuật và hướng dẫn bạn:
+                            Tự học xây dựng ứng dụng Web quản lý CSDL toàn diện với ADO.NET 2.0 và ASP.NET.
+                            Khai thác các đối tượng và nguồn dữ liệu dành cho WebForm.
+                            Sử dụng các điều khiển dữ liệu đặc thù dành riêng cho ASP.NET và Web.
+                            Làm quen với những khái niệm xử lý dữ liệu hoàn toàn mới.
+                            Ràng buộc dữ liệu với các thành phần giao diện Web Forms.
+                            Thiết kế ứng dụng Web "Quản lý CD Shop" trực quan và thực tế.
+                            Cung cấp một kiến thức hoàn chỉnh về Web cho các bạn yêu thích ngôn ngữ Visual Basic và .NET Framework.
+                            Sách có kèm theo CD-ROM bài tập.
+                            Xin trân trọng giới thiệu cùng các bạn.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="media-object-default">
+                    <!-- Sản phẩm 4,5,6-->
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object imgsachbannhieu"
+                                     src="~/Images/Slider/TH001.jpg" alt="placeholder image">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Phong Cách Quản Lý Kinh Doanh Hiện Đại </h4>
+                            Khả năng hoạch định dài hạn đồng thời tối ưu hóa tình hình hoạt động ngắn hạn là một yêu cầu bắt buộc phải có đối với các nhà quản lý.Tư Duy Chiến Lược sẽ giúp bạn vạch ra con đường đến thành công đồng thời giúp hình thành các kỹ năng phân tích và hoạch định theo nhóm. Tất cả các lĩnh vực then chốt để hình thành và thực thi một chiến lược đều được trình bày cặn kẽ trong cuốn sách này, từ việc nghiên cứu và thu thập thông tin nền tảng, hình thành một chiến lược mới đến việc xem xét và ứng dụng chiến lược ấy. Cả thảy có 101 chỉ dẫn nhằm cung cấp cho các bạn những lời khuyên thực tiễn hơn, đồng thời bài tập tự đánh giá sẽ giúp bạn xác định xem mình là một nhà tư duy chiến lược hiệu quả đến mức nào. Khi bạn có nhiều tham vọng hơn về việc hoạch định cho tương lai, cẩm nang này sẽ là quyển sách tham khảo không thể thiếu, giúp suy nghĩ của bạn đi đúng hướng.
+                            Xin trân trọng giới thiệu cuốn sách cùng bạn.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+

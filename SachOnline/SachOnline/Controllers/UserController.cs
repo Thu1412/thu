@@ -9,8 +9,12 @@ namespace SachOnline.Controllers
 {
     public class UserController : Controller
     {
-        dbSachOnlineDataContext data = new dbSachOnlineDataContext("Data Source=XIUXIUTHW\\MAYAO;Initial Catalog=SachOnline;Integrated Security=True");
+        dbSachOnlineDataContext db = new dbSachOnlineDataContext("Data Source=XIUXIUTHW\\MAYAO;Initial Catalog=SachOnline;Integrated Security=True");
+
         
+
+
+
 
         // GET: User
         [HttpGet]
@@ -22,13 +26,14 @@ namespace SachOnline.Controllers
         public ActionResult DangKy(FormCollection collection, KHACHHANG kh)
         {
             var sHoTen = collection["HoTen"];
-            var stenDN = collection["TenDN"];
+            var sTenDN = collection["TenDN"];
             var sMatKhau = collection["Matkhau"];
-            var sMatkhauNhapLai = collection["MatKhauNL"];
-            var sDiachi = collection["Diachi"];
+            var sMatKhauNhapLai = collection["MatKhauNL"];
+            var sDiaChi = collection["Diachi"];
             var sEmail = collection["Email"];
             var sDienThoai = collection["DienThoai"];
             var dNgaySinh = String.Format("{0:MM/dd/yyyy}", collection["NgaySinh"]);
+
             if (String.IsNullOrEmpty(sHoTen))
             {
                 ViewData["err1"] = "Họ tên không được rỗng";
@@ -60,27 +65,27 @@ namespace SachOnline.Controllers
                 ViewData["err6"] = "Số điện thoại không được rỗng";
             }
 
-            else if (db.KHACHHANGs(n => n.Taikhoan == sTenDN) != null)
+            else if (db.KHACHHANGs.SingleOrDefault(n => n.TaiKhoan == sTenDN) != null)
             {
                 ViewBag.ThongBao = "Tên đăng nhập đã tồn tại";
             }
 
-            else if (db.KHACHHANGS.SingleOrDefault(n => n.Email == sEmail) != null)
+            else if (db.KHACHHANGs.SingleOrDefault(n => n.Email == sEmail) != null)
             {
                 ViewBag.ThongBao = "Email đã được sử dụng";
 
             }
             else
             {
-                //Gần giá trị cho đối tượng được tạo mới (kh)
-                kh.HoTen sHoTen;
-                kh.TaiKhoan sTenDN;
+                
+                kh.HoTen = sHoTen;
+                kh.TaiKhoan = sTenDN;
                 kh.MatKhau = sMatKhau;
-                kh.Email sEmail;
-                kh.Diachi = sDiaChi;
+                kh.Email = sEmail;
+                kh.DiaChi = sDiaChi;
                 kh.DienThoai = sDienThoai;
                 kh.NgaySinh = DateTime.Parse(dNgaySinh);
-                db.KHACHHANGS.InsertOnSubmit(kh);
+                db.KHACHHANGs.InsertOnSubmit(kh);
                 db.SubmitChanges();
                 return RedirectToAction("DangNhap");
             }
@@ -89,6 +94,42 @@ namespace SachOnline.Controllers
 
 
 
+
+        }
+        [HttpGet]
+        public ActionResult DangNhap()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult DangNhap(FormCollection collection)
+        {
+            var sTenDN = collection["TenDN"];
+            var sMatKhau = collection["Matkhau"];
+            if (String.IsNullOrEmpty(sTenDN))
+            {
+                ViewData["Err1"] = "Bạn chưa nhập tên đăng nhập";
+            }
+            else if (String.IsNullOrEmpty(sMatKhau))
+            {
+                ViewData["Err2"] = "Phải nhập mật khẩu";
+            }
+            else
+            {
+
+                KHACHHANG kh = db.KHACHHANGs.SingleOrDefault(n => n.TaiKhoan == sTenDN && n.MatKhau == sMatKhau);
+                if (kh != null)
+                {
+                    ViewBag.ThongBao = "Chúc mừng đăng nhập thành công";
+                    Session["TaiKhoan"] = kh;
+                }
+                else
+                {
+                    ViewBag.ThongBao = "Tên đăng nhập hoặc mật khẩu không đúng";
+                }
+
+            }
+            return View();
 
         }
     }

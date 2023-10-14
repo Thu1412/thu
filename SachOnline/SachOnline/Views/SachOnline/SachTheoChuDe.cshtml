@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "SÁCH THEO CHỦ ĐỀ";
+    ViewBag.Title = "SachTheoChuDe";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 
 }
@@ -27,10 +27,10 @@
                 <div class="caption">
 
                     <h4 style="min-height:70px;">
-                        <a href="@Url.Action("ChiTietSach","SachOnline", new { id =sach.MaSach})">@sach.TenSach</a>
+                        <a href="@Url.Action("ChiTietSach","SachOnline", new { id = sach.MaSach })">@sach.TenSach</a>
                     </h4>
                     <p>
-                        <a href="#" class="btn btn-primary" role="button">
+                        <a href="@Url.Action("ThemGioHang","GioHang", new { ms = sach.MaSach, url = Request.Url.ToString() })" class="btn btn-primary" role="button">
                             <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to Cart
                         </a>
                     </p>
