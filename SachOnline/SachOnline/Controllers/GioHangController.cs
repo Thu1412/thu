@@ -8,7 +8,7 @@ namespace SachOnline.Controllers
 {
     public class GioHangController : Controller
     {
-        dbSachOnlineDataContext db = new dbSachOnlineDataContext("Data Source=XIUXIUTHW\\MAYAO;Initial Catalog=SachOnline;Integrated Security=True");
+        dbSachOnlineDataContext db = new dbSachOnlineDataContext("Data Source=.;Initial Catalog=SachOnline;Integrated Security=True");
         // GET: GioHang
         public List<GioHang> LayGioHang()
         {

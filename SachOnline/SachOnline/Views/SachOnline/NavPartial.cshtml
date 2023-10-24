@@ -1,48 +1,32 @@
 ﻿@{
     ViewBag.Title = "Nav";
 }
-<div class="navbar-header">
+
+<div class="navbar-left">
     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1" aria-expanded="false">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
 
+    <a class="navbar-brand" href="@Url.Action("Index","SachOnline")">SachOnline</a>
+    <a class="navbar-brand" href="@Url.Action("Index","SachOnline")">Trang Chủ</a>
 
-    <a class="navbar-brand" href="@Url.Action("Index","SachOnline")">TRANG CHỦ</a>
+    <a class="navbar-brand" href="#">Liên Hệ</a>
+    <a class="navbar-brand" href="#">Giới Thiệu</a>
 
-    <a class="navbar-brand"  href="#">SÁCH THEO CHỦ ĐỀ</a>
-    
-
-    <a class="navbar-brand" href="#">SÁCH THEO NHÀ XUẤT BẢN</a>
-    
-
-</div>
-<form class="navbar-form navbar-header" role="search">
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Tìm kiếm">
-    </div>
-    <button type="submit" class="btn btn-default">Tìm</button>
-</form>
-
-<ul class="nav navbar-nav navbar-header">
-    
-    
-    <li class="dropdown">
-        <a href="@Url.Action("DangKy" ,"User")" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">Người dùng<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a href="@Url.Action("DangKy", "User")"><span class="glyphicon glyphicon-user"></span> Đăng ký</a> </li>
-            
-            <li role="separator" class="divider"></li>
-            <li><a href="@Url.Action("DangNhap", "User")"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập</a></li>
+    <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Tìm kiếm">
+        </div>
+        <button type="submit" class="btn btn-default">Tìm</button>
+        <ul class="nav navbar-nav navbar-right">
+            @Html.Action("LoginLogout", "SachOnline")
+            @Html.Action("GioHangPartial", "GioHang")
         </ul>
-
-    </li>
-        
+    </form>
     
-    <li>
+</div>
 
-        
-        @Html.Action("GioHangPartial", "GioHang")
-    </li>
-</ul>
+
+

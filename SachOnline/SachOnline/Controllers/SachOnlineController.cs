@@ -12,7 +12,7 @@ namespace SachOnline.Controllers
     {
         //Tao 1 doi tuong chua toan bo CSDL tu bdSachOnline
 
-        dbSachOnlineDataContext db = new dbSachOnlineDataContext("Data Source=XIUXIUTHW\\MAYAO;Initial Catalog=SachOnline;Integrated Security=True");
+        dbSachOnlineDataContext db = new dbSachOnlineDataContext("Data Source=.;Initial Catalog=SachOnline;Integrated Security=True");
         /// <summary>
         /// LaySachMoi
         /// </summary>
@@ -37,8 +37,6 @@ namespace SachOnline.Controllers
             int iPageNum = (page ?? 1);
             var sach = from s in db.SACHes where s.MaCD == iMaCD select s;
             return View(sach.ToPagedList(iPageNum, iSize));
-
-
         }
 
         public ActionResult ChiTietSach(int id)
@@ -64,20 +62,15 @@ namespace SachOnline.Controllers
             return PartialView(listNhaXB);
         }
         public ActionResult SachTheoNhaXuatBan(int iMaNXB, int ? page)
-
         {
 
             ViewBag.MaNXB = iMaNXB;
             int iSize = 3;
             int iPageNum = (page ?? 1);
             var sach = from s in db.SACHes where s.MaNXB == iMaNXB select s;
-            return View(sach.ToPagedList(iPageNum, iSize));
-
-
-            
+            return View(sach.ToPagedList(iPageNum, iSize));         
 
         }
-
         public ActionResult SachBanNhieuPartial()
         {
             var listSachBanNhieu = from bn in db.SACHes select bn;
@@ -92,6 +85,14 @@ namespace SachOnline.Controllers
         public ActionResult SiderPartial()
         {
             return PartialView();
+        }
+        public ActionResult LoginLogoutPartial()
+        {
+            return PartialView();
+        }
+        public ActionResult LoginLogout()
+        {
+            return PartialView("LoginLogoutPartial");
         }
 
     }

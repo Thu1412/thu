@@ -17,6 +17,8 @@ namespace SachOnline
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "SachOnline", action = "Index", id = UrlParameter.Optional }
+
+                ,namespaces:new[] {"SachOnline.Controllers"}
             );
         }
     }
