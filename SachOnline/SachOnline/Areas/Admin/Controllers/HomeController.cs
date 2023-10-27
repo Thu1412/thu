@@ -9,7 +9,7 @@ namespace SachOnline.Areas.Admin.Controllers
 {
     public class HomeController : Controller
     {
-        dbSachOnlineDataContext db = new dbSachOnlineDataContext("Data Source=.;Initial Catalog=SachOnline;Integrated Security=True");
+        DataClasses1DataContext db = new DataClasses1DataContext("Data Source=XIUXIUTHW\\MAYAO;Initial Catalog=SachOnline;Integrated Security=True");
         // GET: Admin/Home
         public ActionResult Index()
         {

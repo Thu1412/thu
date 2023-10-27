@@ -11,11 +11,11 @@ namespace SachOnline.Areas.Admin.Controllers
 {
     public class SachController : Controller
     {
-        dbSachOnlineDataContext db = new dbSachOnlineDataContext("Data Source=.;Initial Catalog=SachOnline;Integrated Security=True");
+        DataClasses1DataContext db = new DataClasses1DataContext("Data Source=XIUXIUTHW\\MAYAO;Initial Catalog=SachOnline;Integrated Security=True");
         public ActionResult Index(int? Page)
         {
             int iPageNum = (Page ?? 1);
-            int iPageSize = 7;
+            int iPageSize = 5;
             return View(db.SACHes.ToList().OrderBy(n => n.MaSach).ToPagedList(iPageNum, iPageSize));
         }
         [HttpGet]

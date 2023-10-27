@@ -7,7 +7,7 @@ namespace SachOnline.Models
 {
     public class GioHang
     {
-        dbSachOnlineDataContext db = new dbSachOnlineDataContext("Data Source=XIUXIUTHW\\MAYAO;Initial Catalog=SachOnline;Integrated Security=True");
+        DataClasses1DataContext db = new DataClasses1DataContext("Data Source=XIUXIUTHW\\MAYAO;Initial Catalog=SachOnline;Integrated Security=True");
         public int iMaSach { get; set; }
         public string sṬenSach { get; set; }
         public string sTenSach { get; }

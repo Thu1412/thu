@@ -1,0 +1,26 @@
+﻿@model SachOnline.Models.CHUDE
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center">CHI TIẾT CHỦ ĐỀ </h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên Chủ Đề:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenChuDe)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaCD }) |
+    @Html.ActionLink("VỀ TRANG QUẢN LÝ CHỦ ĐỀ ", "Index")
+</p>

@@ -1,0 +1,76 @@
+﻿@model SachOnline.Models.DONDATHANG
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style type="text/css">
+    img {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
+    h3, h4 {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<h2>XÁC NHẬN THÔNG TIN CẦN XÓA</h2>
+<h3>Bạn quyết định xóa đơn đặt hàng này?</h3>
+<h4>@Html.Raw(ViewBag.ThongBao)</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Đã Thanh Toán
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DaThanhToan)
+        </dd>
+
+        <dt>
+            Tình Trạng Giao Hàng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TinhTrangGiaoHang)
+        </dd>
+
+        <dt>
+            Ngày Đặt
+        </dt>
+
+        <dd>
+            @Html.FormatValue(@Model.NgayDat, "{0:dd/MM/yyyy}")
+        </dd>
+
+        <dt>
+            Ngày Giao
+        </dt>
+
+        <dd>
+            @Html.FormatValue(@Model.NgayGiao, "{0:dd/MM/yyyy}")
+        </dd>
+
+        <dt>
+            Mã Khách Hàng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaKH)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("VỀ TRANG QUẢN LÝ THÔNG TIN ĐƠN ĐẶT HÀNG", "Index")
+        </div>
+    }
+</div>

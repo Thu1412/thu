@@ -23,7 +23,7 @@ namespace SachOnline.Models
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SachOnline")]
-	public partial class dbSachOnlineDataContext : System.Data.Linq.DataContext
+	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -54,39 +54,36 @@ namespace SachOnline.Models
     partial void InsertTACGIA(TACGIA instance);
     partial void UpdateTACGIA(TACGIA instance);
     partial void DeleteTACGIA(TACGIA instance);
-
-       
-
-        partial void InsertVIETSACH(VIETSACH instance);
+    partial void InsertVIETSACH(VIETSACH instance);
     partial void UpdateVIETSACH(VIETSACH instance);
     partial void DeleteVIETSACH(VIETSACH instance);
     #endregion
 		
-		public dbSachOnlineDataContext() : 
+		public DataClasses1DataContext() : 
 				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["SachOnlineConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public dbSachOnlineDataContext(string connection) : 
+		public DataClasses1DataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public dbSachOnlineDataContext(System.Data.IDbConnection connection) : 
+		public DataClasses1DataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public dbSachOnlineDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DataClasses1DataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public dbSachOnlineDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DataClasses1DataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -123,17 +120,16 @@ namespace SachOnline.Models
 				return this.GetTable<DONDATHANG>();
 			}
 		}
-
-        public System.Data.Linq.Table<KHACHHANG> KHACHHANGs
+		
+		public System.Data.Linq.Table<KHACHHANG> KHACHHANGs
 		{
-            get
-            {
+			get
+			{
 				return this.GetTable<KHACHHANG>();
 			}
-            
-        }
-
-        public System.Data.Linq.Table<NHAXUATBAN> NHAXUATBANs
+		}
+		
+		public System.Data.Linq.Table<NHAXUATBAN> NHAXUATBANs
 		{
 			get
 			{
